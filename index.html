@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Design Platform</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 20px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+
+    .section {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .theme-options {
+      display: flex;
+      justify-content: space-around;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .color-palette {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .color-palette:hover {
+      border-color: #888;
+    }
+
+    .color-strip {
+      flex: 1;
+    }
+
+    .purpose-select {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+
+    .templates-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+    .template-card {
+      min-width: 250px;
+      height: 160px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Design Your Website</h1>
+    <p>Select a theme and purpose, then explore templates</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Theme Selection -->
+    <div class="section">
+      <h2>Select Theme</h2>
+      <div class="theme-options">
+        <div class="color-palette" title="Modern">
+          <div class="color-strip" style="background:#DCE1E3;"></div>
+          <div class="color-strip" style="background:#A1A6AB;"></div>
+          <div class="color-strip" style="background:#6D7175;"></div>
+          <div class="color-strip" style="background:#393D40;"></div>
+        </div>
+        <div class="color-palette" title="Minimal">
+          <div class="color-strip" style="background:#F8F8F8;"></div>
+          <div class="color-strip" style="background:#E0E0E0;"></div>
+          <div class="color-strip" style="background:#C0C0C0;"></div>
+          <div class="color-strip" style="background:#A0A0A0;"></div>
+        </div>
+        <div class="color-palette" title="Warm">
+          <div class="color-strip" style="background:#FFE9D6;"></div>
+          <div class="color-strip" style="background:#FFD7B5;"></div>
+          <div class="color-strip" style="background:#FFB88C;"></div>
+          <div class="color-strip" style="background:#E9966D;"></div>
+        </div>
+        <div class="color-palette" title="Cool">
+          <div class="color-strip" style="background:#E0F7FA;"></div>
+          <div class="color-strip" style="background:#B2EBF2;"></div>
+          <div class="color-strip" style="background:#80DEEA;"></div>
+          <div class="color-strip" style="background:#4DD0E1;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Purpose Selection -->
+    <div class="section">
+      <h2>Select Purpose</h2>
+      <select class="purpose-select">
+        <option disabled selected>Select purpose...</option>
+        <option value="portfolio">Portfolio</option>
+        <option value="business">Business</option>
+        <option value="blog">Blog</option>
+        <option value="store">Online Store</option>
+      </select>
+    </div>
+
+    <!-- Template Previews -->
+    <div class="section">
+      <h2>Browse Templates</h2>
+      <div class="templates-container">
+        <div class="template-card">Template 1</div>
+        <div class="template-card">Template 2</div>
+        <div class="template-card">Template 3</div>
+        <div class="template-card">Template 4</div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
