@@ -20,6 +20,14 @@ header {
   min-height: 120px; /* Ensures enough height for vertical icons */
 }
 
+/* Responsive header */
+@media (max-width: 700px) {
+  header {
+    padding: 12px 0;
+    min-height: 80px;
+  }
+}
+
 
 /* NAV ICON CONTAINER */
 
@@ -200,12 +208,23 @@ h1, h2 {
 /* TEMPLATE OPTIONS */
 .templates-container {
   display: flex;
+  flex-wrap: wrap;
   overflow-x: auto;
   gap: 20px;
   padding: 10px 0;
+  justify-content: center;
 }
 
-.template-option {
+@media (max-width: 700px) {
+  .templates-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    overflow-x: unset;
+  }
+}
+
+.template-option { 
   min-width: 250px;
   height: 160px;
   background-color: white;
@@ -223,8 +242,10 @@ h1, h2 {
 
 .template-option.selected {
   border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
   background-color: #f0f8ff;
 }
+
 .blink {
   animation: blink 1s infinite;
 }
@@ -236,3 +257,67 @@ h1, h2 {
 }
 
 /* Builder Styles */
+.plus-dropdown {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+.plus-btn {
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: transparent;
+  color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+}
+.plus-btn:hover {
+  background-color: #3498db;
+  color: #fff;
+}
+
+/* Responsive for small screens */
+@media (max-width: 700px) {
+  .plus-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+}
+
+.plus-btn:hover {
+  background-color: #2c80b4;
+  transform: scale(1.05);
+}
+
+.plus-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background: #fff;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  min-width: 180px;
+}
+
+.plus-menu li {
+  padding: 10px 16px;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.plus-menu li:hover {
+  background-color: #f0f0f0;
+}
